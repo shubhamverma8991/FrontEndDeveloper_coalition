@@ -18,6 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       data.forEach((patient) => {
         const listItem = document.createElement("li");
+        if (patient.name == "Jessica Taylor") {
+          listItem.classList.add("active");
+        }
         listItem.innerHTML = `
           <div class="box">
             <img src="${patient.profile_picture}" alt="${patient.name}" class="person_img" />
@@ -28,6 +31,16 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           <img src="./assets/more_horiz_FILL0_wght300_GRAD0_opsz24@2x.png" alt="More" class="more" />
         `;
+        listItem.addEventListener("click", () => {
+          // Remove active class from all list items
+          document.querySelectorAll(".patient-list li").forEach((item) => {
+            item.classList.remove("active");
+          });
+          // Add active class to the clicked list item
+          listItem.classList.add("active");
+          // Display patient details
+          displayPatientDetails(patient);
+        });
         patientList.appendChild(listItem);
       });
     })
@@ -76,3 +89,13 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 });
+
+function displayPatientDetails(patient) {
+  document.getElementById("profile-picture").src = patient.profile_picture;
+  document.getElementById("patient-name").textContent = patient.name;
+  document.getElementById("date-of-birth").textContent = patient.date_of_birth;
+  document.getElementById("gender").textContent = patient.gender;
+  document.getElementById("phone-number").textContent = patient.phone_number;
+  document.getElementById("emergency-contact").textContent = patient.emergency_contact;
+  document.getElementById("insurance-type").textContent = patient.insurance_type;
+}

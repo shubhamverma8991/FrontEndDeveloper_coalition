@@ -102,7 +102,7 @@ header nav ul li img {
 }
 
 header nav ul li.active {
-  background-color: #01f0d0;
+  background-color: #d8fcf7;
 }
 
 header .profile {
@@ -160,7 +160,6 @@ main {
 .sidebar {
   width: 21%;
   background-color: white;
-  padding: 1rem;
   border-radius: 16px;
   -webkit-border-radius: 16px;
   -moz-border-radius: 16px;
@@ -176,6 +175,7 @@ main {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+  padding: 1rem;
 }
 
 .sidebar-header h2 {
@@ -206,11 +206,15 @@ main {
   overflow-y: auto;
 }
 
+.sidebar .patient-list li {
+  padding: 1rem;
+}
+
 .sidebar .patient-list li,
 .sidebar .patient-list li .box {
   display: flex;
   align-items: center;
-  padding: 0.5rem 0;
+  /* padding: 0.5rem 0; */
   cursor: pointer;
   justify-content: space-between;
 }
@@ -407,12 +411,10 @@ main {
   -moz-border-radius: 12px;
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
-  /* height: 350px;
-  overflow-y: auto; */
 }
 
 .table-container {
-  max-height: 300px; /* Adjust the height as needed */
+  max-height: 300px;
   overflow-y: auto;
   position: relative;
 }
@@ -425,17 +427,37 @@ main {
 .table-container thead {
   position: sticky;
   top: 0;
-  background-color: white; /* Adjust the background color as needed */
   z-index: 1;
+  background-color: #f5f5f5;
+}
+
+.table-container thead tr {
+  border-radius: 24px;
+  -webkit-border-radius: 24px;
+  -moz-border-radius: 24px;
+  -ms-border-radius: 24px;
+  -o-border-radius: 24px;
 }
 
 .table-container th,
 .table-container td {
   padding: 12px 15px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
 }
 
+.table-container th {
+  font-size: 14px;
+  font-weight: bold;
+  color: #072635;
+}
+
+.table-container td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #f6f6f6;
+  font-size: 14px;
+  color: #072635;
+}
 .diagnostic-list h2 {
   font-size: 24px;
   margin-bottom: 10px;
@@ -445,21 +467,6 @@ main {
   width: 100%;
   border-collapse: collapse;
   font-family: "Manrope", sans-serif;
-}
-
-.diagnostic-list th,
-.diagnostic-list td {
-  padding: 12px 15px;
-  text-align: left;
-}
-
-.diagnostic-list thead {
-  background-color: #f5f5f5;
-}
-
-.diagnostic-list th {
-  font-weight: 600;
-  font-size: 16px;
 }
 
 .diagnostic-list tbody tr {
@@ -499,7 +506,7 @@ main {
   /* text-align: center; */
 }
 .lab-results {
-  height: 334px;
+  height: 380px;
   overflow-y: auto;
   margin-bottom: 1rem;
 }
@@ -533,6 +540,11 @@ main {
   margin-bottom: 24px;
 }
 
+.patient-info .details div:last-child {
+  margin: 24px 0;
+  margin-top: 48px;
+}
+
 .patient-info .details div p {
   display: inline;
   display: flex;
@@ -551,12 +563,20 @@ main {
 }
 
 .patient-info .details button {
-  padding: 0.5rem 1rem;
-  background-color: #00c4cc;
-  color: white;
+  width: 220px;
+  height: 41px;
+  background-color: #01f0d0;
+  color: black;
   border: none;
-  border-radius: 4px;
+  border-radius: 41px;
   cursor: pointer;
+  -webkit-border-radius: 41px;
+  -moz-border-radius: 41px;
+  -ms-border-radius: 41px;
+  -o-border-radius: 41px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #072635;
 }
 
 .lab-results h3 {
@@ -572,10 +592,16 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 0;
+  padding: 0.8rem 1rem;
   font-weight: normal;
   font-size: 13px;
   color: #072635;
+}
+.lab-results ul li:hover {
+  background-color: #f9f9f9;
+}
+.active {
+  background-color: #f9f9f9;
 }
 
 .lab-results ul li img {
